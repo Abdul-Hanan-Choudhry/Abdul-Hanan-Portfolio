@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Matte Graphite & Terracotta Theme */
+    --background: 0 0% 10%; /* #1a1a1a */
+    --foreground: 30 20% 90%;
+    
+    --card: 0 0% 12%;
+    --card-foreground: 30 20% 90%;
+    
+    --popover: 0 0% 10%;
+    --popover-foreground: 30 20% 90%;
+    
+    --primary: 13 69% 63%; /* #E07A5F Terracotta */
+    --primary-foreground: 0 0% 10%;
+    
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 30 20% 90%;
+    
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
+    
+    --accent: 0 0% 15%;
+    --accent-foreground: 13 69% 63%;
+    
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 30 20% 90%;
+    
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 13 69% 63%;
+    --radius: 0rem; /* Sharp edges for architectural feel */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-primary/30 selection:text-primary overflow-x-hidden;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+/* Custom Utilities */
+.glass-panel {
+  @apply bg-[#1a1a1a]/80 backdrop-blur-md border border-white/5;
+}
+
+.text-gradient {
+  @apply text-primary;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-white/10 hover:bg-white/20 transition-colors;
+}
